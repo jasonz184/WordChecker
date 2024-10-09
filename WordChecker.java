@@ -1,9 +1,16 @@
 import java.util.ArrayList;
 
-public class WordChecker 
-{
+public class WordChecker {
     /** Initialized in the constructor and contains no null elements */
     private ArrayList<String> wordList;
+
+    public WordChecker(ArrayList<String> list) {
+        wordList = list;
+    }
+
+    public WordChecker() {
+        wordList = new ArrayList<String>();
+    }
 
     /**
      * Returns true if each element of wordList (except the first) contains the
@@ -12,10 +19,12 @@ public class WordChecker
      * Precondition: wordList contains at least two elements.
      * Postcondition: wordList is unchanged.
      */
-    public boolean isWordChain() 
-    {
-        for (String string : wordList) {
-            
+    public boolean isWordChain() {
+        boolean wordChain = true;
+        for (int i = 1; i < wordList.size(); i++) {
+            String after = wordList.get(i);
+            String before = wordList.get(i - 1);
+            if(after.indexOf(before) < 0) return false;
         }
     }
 
@@ -28,8 +37,7 @@ public class WordChecker
      * Items appear in the returned list in the same order as they appear in
      * wordList.
      */
-    public ArrayList<String> createList(String target) 
-    {
-        /* to be implemented in part (b) */ 
+    public ArrayList<String> createList(String target) {
+        /* to be implemented in part (b) */
     }
 }
