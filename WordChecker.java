@@ -20,14 +20,16 @@ public class WordChecker {
      * Postcondition: wordList is unchanged.
      */
     public boolean isWordChain() {
-        boolean wordChain = true;
-        for (int i = 1; i < wordList.size(); i++) {
-            String after = wordList.get(i);
-            String before = wordList.get(i - 1);
-            if(after.indexOf(before) < 0) return false;
+        boolean wordChain = true; 
+        for (int i = 1; i < wordList.size(); i++) { 
+            String after = wordList.get(i); 
+            String before = wordList.get(i - 1); 
+            if(after.indexOf(before) < 0) {
+                wordChain = false;
+            } 
         }
+        return wordChain;
     }
-
     /**
      * Returns an ArrayList<String> based on strings from wordList that start
      * with target, as described in part (b). Each element of the returned ArrayList
