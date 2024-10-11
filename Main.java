@@ -3,7 +3,6 @@ public class Main
 {
     public static void main(String[] args)
     {
-        WordChecker w = new WordChecker();
         ArrayList<String> words = new ArrayList<String>();
         words.add("an");
         words.add("band");
@@ -11,7 +10,15 @@ public class Main
         words.add("abandon");
         System.out.println(words);
         WordChecker x = new WordChecker(words);
-        words.isWordChain();
+        System.out.println(x.isWordChain());
+        ArrayList<String> words2 = new ArrayList<String>();
+        words2.add("to");
+        words2.add("too");
+        words2.add("stool");
+        words2.add("tools");
+        System.out.println(words2);
+        WordChecker w = new WordChecker(words2);
+        System.out.println(w.isWordChain());
     }
 
 }
