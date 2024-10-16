@@ -11,6 +11,7 @@ public class Main
         System.out.println(words);
         WordChecker x = new WordChecker(words);
         System.out.println(x.isWordChain());
+
         ArrayList<String> words2 = new ArrayList<String>();
         words2.add("to");
         words2.add("too");
@@ -19,6 +20,18 @@ public class Main
         System.out.println(words2);
         WordChecker w = new WordChecker(words2);
         System.out.println(w.isWordChain());
+
+        ArrayList<String> words3 = new ArrayList<String>();
+        words3.add("catch");
+        words3.add("bobcat");
+        words3.add("catchacat");
+        words3.add("cat");
+        words3.add("at");
+        System.out.println(words3);
+        WordChecker y = new WordChecker(words3);
+        System.out.println(y.createList("cat"));
+        System.out.println(y.createList("catch"));
+        System.out.println(y.createList("dog"));
     }
 
 }

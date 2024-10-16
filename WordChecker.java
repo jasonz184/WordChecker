@@ -41,6 +41,15 @@ public class WordChecker {
      * wordList.
      */
     public ArrayList<String> createList(String target) {
-        /* to be implemented in part (b) */
+        ArrayList<String> list = new ArrayList<String>();
+        for(String s : wordList){
+            if(s.indexOf(target) == 0){
+                list.add(s.substring(target.length()));
+            }
+            else {
+                list.remove(s);
+            }
+        }
+        return list;
     }
 }
